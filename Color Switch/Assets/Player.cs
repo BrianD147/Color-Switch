@@ -3,12 +3,21 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    [SerializeField]
-    private float jumpForce; // Amount of forced added to players upward direction
+    public float jumpForce; // Amount of forced added to players upward direction
 
-    private string currentColor; // The current player color
+    public string currentColor; // The current player color
 
-    Rigidbody2D rb; // players Rigidbody
+    public Rigidbody2D rb; // players Rigidbody
+
+    public SpriteRenderer sr; // player sprite renderer
+
+    public Color colorCyan; // cyan color for sprite
+
+    public Color colorYellow; // yellow color for sprite
+
+    public Color colorMagenta; // magenta color for sprite
+
+    public Color colorPink; // pink color for sprite
 
     void Start() {
         rb = GetComponent<Rigidbody2D>(); // linking player Rigidbody to rb
@@ -18,21 +27,25 @@ public class Player : MonoBehaviour {
 
    void SetRandomColor() // used to set the currentColor to either Cyan, Yellow, Magenta or Pink
     {
-        int index = Random.range(0, 3); // index int which can have any value from 0 - 3 (4 options)
+        int index = UnityEngine.Random.Range(0, 3); // index int which can have any value from 0 - 3 (4 options)
 
         switch (index)
         {
             case 0:
                 currentColor = "Cyan";
+                sr.color = colorCyan; // set sprite to be cyan
                 break;
             case 1:
                 currentColor = "Yellow";
+                sr.color = colorYellow; // set sprite to be yellow
                 break;
             case 2:
                 currentColor = "Magenta";
+                sr.color = colorMagenta; // set sprite to be magenta
                 break;
             case 3:
                 currentColor = "Pink";
+                sr.color = colorPink; // set sprite to be pink
                 break;
         }
     }
@@ -46,9 +59,9 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col) // When a collision occurs
     {
-        if (col.tag == "Yellow") // If the collision is with the yellow hitbox
+        if (col.tag != currentColor) // If the collision is with the wrong color
         {
-
+            Debug.Log("GAME OVER!");
         }
     }
 }
