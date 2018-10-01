@@ -4,21 +4,21 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     [SerializeField]
-    private float jumpForce;
+    private float jumpForce; // Amount of forced added to players upward direction
 
-    private string currentColor;
+    private string currentColor; // The current player color
 
-    Rigidbody2D rb;
+    Rigidbody2D rb; // players Rigidbody
 
     void Start() {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); // linking player Rigidbody to rb
 
-        SetRandomColor();
+        SetRandomColor(); // call SetRandomColor()
     }
 
-   void SetRandomColor()
+   void SetRandomColor() // used to set the currentColor to either Cyan, Yellow, Magenta or Pink
     {
-        int index = Random.range(0, 3);
+        int index = Random.range(0, 3); // index int which can have any value from 0 - 3 (4 options)
 
         switch (index)
         {
@@ -38,15 +38,15 @@ public class Player : MonoBehaviour {
     }
 
     void Update () {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) // When spacebar is pressed
         {
-            rb.velocity = Vector2.up * jumpForce;
+            rb.velocity = Vector2.up * jumpForce; // apply jumpForce to the players upwards direction
         }
 	}
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col) // When a collision occurs
     {
-        if (col.tag == "Yellow")
+        if (col.tag == "Yellow") // If the collision is with the yellow hitbox
         {
 
         }
