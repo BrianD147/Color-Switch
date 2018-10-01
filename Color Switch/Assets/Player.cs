@@ -27,7 +27,7 @@ public class Player : MonoBehaviour {
 
    void SetRandomColor() // used to set the currentColor to either Cyan, Yellow, Magenta or Pink
     {
-        int index = UnityEngine.Random.Range(0, 3); // index int which can have any value from 0 - 3 (4 options)
+        int index = UnityEngine.Random.Range(0, 4); // index int which can have any value from 0 - 3 (4 options)
 
         switch (index)
         {
