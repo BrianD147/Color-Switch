@@ -59,16 +59,16 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col) // When a collision occurs
     {
-        if(col.tag == "ColorChanger")
+        if(col.tag == "ColorChanger") // If the collision is with the colorChanger
         {
-            SetRandomColor();
-            Destroy(col.gameObject);
-            return;
+            SetRandomColor(); // Change the color
+            Destroy(col.gameObject); // Destroy the colorChanger object
+            return; // Exit the function
         }
 
         if (col.tag != currentColor) // If the collision is with the wrong color
         {
-            Debug.Log("GAME OVER!");
+            //Debug.Log("GAME OVER!");
         }
     }
 }
