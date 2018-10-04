@@ -46,6 +46,16 @@ public class Player : MonoBehaviour {
     }
 
     void Update () {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase.Equals(TouchPhase.Began))
+            {
+                rb.velocity = Vector2.up * jumpForce; // apply jumpForce to the players upwards direction
+            }
+        }
+        
+
         if (Input.GetKeyDown(KeyCode.Space)) // When spacebar is pressed
         {
             rb.velocity = Vector2.up * jumpForce; // apply jumpForce to the players upwards direction
