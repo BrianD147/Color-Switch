@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour {
 
     public Transform circle;
     public Transform colorChanger;
+    public Transform scorePickup;
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +46,7 @@ public class Spawner : MonoBehaviour {
         if (spawnCount % 2 == 0) // If spawnCount is even
         {
             Instantiate(circle, transform.position, transform.rotation); // Spawn a circle
+            Instantiate(scorePickup, transform.position, transform.rotation); // Spawn a scorePickup
         }
         else // If spawnCount is odd
         {

@@ -71,10 +71,17 @@ public class Player : MonoBehaviour {
             return; // Exit the function
         }
 
+        if (col.tag == "Score")
+        {
+            //Add 1 to score
+            Destroy(col.gameObject);
+            return;
+        }
+
         if (col.tag != currentColor) // If the collision is with the wrong color
         {
             //Debug.Log("GAME OVER!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
