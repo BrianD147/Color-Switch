@@ -1,27 +1,22 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
     public float jumpForce; // Amount of forced added to players upward direction
-
     public string currentColor; // The current player color
 
     public Rigidbody2D rb; // players Rigidbody
-
     public SpriteRenderer sr; // player sprite renderer
 
     public Color colorCyan; // cyan color for sprite
-
     public Color colorYellow; // yellow color for sprite
-
     public Color colorMagenta; // magenta color for sprite
-
     public Color colorPink; // pink color for sprite
 
     void Start() {
         rb = GetComponent<Rigidbody2D>(); // linking player Rigidbody to rb
-
         SetRandomColor(); // call SetRandomColor()
     }
 
@@ -69,6 +64,7 @@ public class Player : MonoBehaviour {
         if (col.tag != currentColor) // If the collision is with the wrong color
         {
             //Debug.Log("GAME OVER!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

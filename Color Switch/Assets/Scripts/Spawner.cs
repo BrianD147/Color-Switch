@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour {
             transform.position = new Vector3(transform.position.x, player.position.y + 20, transform.position.z); // Move the spawners vertical position to match the players vertical position
         }
 
-        if (transform.position.y % 5 < 1) // Spawning occures after a gap of 5
+        if (transform.position.y % 4 < 1) // Spawning occures after a gap of 5
         {
             if (!objectSpawned) // If objectSpawned is false
             {
@@ -45,7 +45,8 @@ public class Spawner : MonoBehaviour {
         if (spawnCount % 2 == 0) // If spawnCount is even
         {
             Instantiate(circle, transform.position, transform.rotation); // Spawn a circle
-        } else // If spawnCount is odd
+        }
+        else // If spawnCount is odd
         {
             Instantiate(colorChanger, transform.position, transform.rotation); // Spawn a colorChanger
         }
