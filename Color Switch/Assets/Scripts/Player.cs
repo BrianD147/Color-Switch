@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -14,6 +15,9 @@ public class Player : MonoBehaviour {
     public Color colorYellow; // yellow color for sprite
     public Color colorMagenta; // magenta color for sprite
     public Color colorPink; // pink color for sprite
+
+    public int score; // players score
+    public Text scoreText; // players score as presented on screen
 
     void Start() {
         rb = GetComponent<Rigidbody2D>(); // linking player Rigidbody to rb
@@ -73,7 +77,8 @@ public class Player : MonoBehaviour {
 
         if (col.tag == "Score")
         {
-            //Add 1 to score
+            score++;
+            scoreText.text = score.ToString();
             Destroy(col.gameObject);
             return;
         }
