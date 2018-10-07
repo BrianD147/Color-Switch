@@ -15,11 +15,7 @@ public class Despawner : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col) // When a collision occurs
     {
-        if (col.tag == "Player")
-        {
-            Debug.Log("GAME OVER");
-        }
-        else
+        if (col.tag != "Player")
         {
             Destroy(col.gameObject);
         }

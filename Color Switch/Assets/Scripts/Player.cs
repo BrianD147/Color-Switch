@@ -52,6 +52,7 @@ public class Player : MonoBehaviour {
     void Update () {
         if (Input.touchCount > 0)
         {
+            rb.bodyType = RigidbodyType2D.Dynamic;
             Touch touch = Input.GetTouch(0);
             if (touch.phase.Equals(TouchPhase.Began))
             {
@@ -86,7 +87,7 @@ public class Player : MonoBehaviour {
         if (col.tag != currentColor) // If the collision is with the wrong color
         {
             //Debug.Log("GAME OVER!");
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
