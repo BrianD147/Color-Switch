@@ -2,22 +2,16 @@
 
 public class Spawner : MonoBehaviour {
 
-    public Transform player;
+    public Transform player; // Player transform
 
-    bool objectSpawned = true;
-    int spawnCount;
-    float spawnPoint;
+    bool objectSpawned = true; // Used to allow or stop objects from being spawned
+    int spawnCount; // Used to determine what should be spawned
+    float spawnPoint; // The position objects should be spawned from
 
-    public Transform circle;
-    public Transform colorChanger;
-    public Transform scorePickup;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public Transform circle; // Default circle transform
+    public Transform colorChanger; // Transform of the color changer gameobject
+    public Transform scorePickup; // Transform of the score pickup gameobject
 	
-	// Update is called once per frame
 	void Update () {
         if (player.position.y > transform.position.y - 20) // If the players vertical position is greater than 22 below the spawners vertical position
         {

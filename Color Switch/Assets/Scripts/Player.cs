@@ -31,20 +31,20 @@ public class Player : MonoBehaviour {
         switch (index)
         {
             case 0:
-                currentColor = "Cyan";
-                sr.color = colorCyan; // set sprite to be cyan
+                currentColor = "Cyan"; // Set currentColor
+                sr.color = colorCyan; // Set sprite to be cyan
                 break;
             case 1:
-                currentColor = "Yellow";
-                sr.color = colorYellow; // set sprite to be yellow
+                currentColor = "Yellow"; // Set currentColor
+                sr.color = colorYellow; // Set sprite to be yellow
                 break;
             case 2:
-                currentColor = "Magenta";
-                sr.color = colorMagenta; // set sprite to be magenta
+                currentColor = "Magenta"; // Set currentColor
+                sr.color = colorMagenta; // Set sprite to be magenta
                 break;
             case 3:
-                currentColor = "Pink";
-                sr.color = colorPink; // set sprite to be pink
+                currentColor = "Pink"; // Set currentColor
+                sr.color = colorPink; // Set sprite to be pink
                 break;
         }
     }
@@ -52,20 +52,33 @@ public class Player : MonoBehaviour {
     void Update () {
         if (Input.touchCount > 0)
         {
-            rb.bodyType = RigidbodyType2D.Dynamic;
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase.Equals(TouchPhase.Began))
+            rb.bodyType = RigidbodyType2D.Dynamic; // Set rigidbody to dynamic
+            Touch touch = Input.GetTouch(0); // Get
+            if (touch.phase.Equals(TouchPhase.Began)) // When the current touch began
             {
-                rb.velocity = Vector2.up * jumpForce; // apply jumpForce to the players upwards direction
+                rb.velocity = Vector2.up * jumpForce; // Apply jumpForce to the players upwards direction
             }
         }
         
 
         if (Input.GetKeyDown(KeyCode.Space)) // When spacebar is pressed
         {
-            rb.velocity = Vector2.up * jumpForce; // apply jumpForce to the players upwards direction
+            rb.bodyType = RigidbodyType2D.Dynamic; // Set rigidbody to dynamic
+            rb.velocity = Vector2.up * jumpForce; // Apply jumpForce to the players upwards direction
         }
-	}
+
+        if (Input.GetKeyDown(KeyCode.UpArrow)) // When up arrow is pressed
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic; // Set rigidbody to dynamic
+            rb.velocity = Vector2.up * jumpForce; // Apply jumpForce to the players upwards direction
+        }
+
+        if (Input.GetMouseButtonDown(0)) // When left mouse button is pressed
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic; // Set rigidbody to dynamic
+            rb.velocity = Vector2.up * jumpForce; // Apply jumpForce to the players upwards direction
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D col) // When a collision occurs
     {
@@ -76,18 +89,17 @@ public class Player : MonoBehaviour {
             return; // Exit the function
         }
 
-        if (col.tag == "Score")
+        if (col.tag == "Score") // If collision is with the score tag
         {
-            score++;
-            scoreText.text = score.ToString();
-            Destroy(col.gameObject);
-            return;
+            score++; // Add 1 to score
+            scoreText.text = score.ToString(); // Set the scoreText to scores new value
+            Destroy(col.gameObject); // Destroy the score gameobject
+            return; // Exit the function
         }
 
         if (col.tag != currentColor) // If the collision is with the wrong color
         {
-            //Debug.Log("GAME OVER!");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Load the same scene from the beginning (temporary)
         }
     }
 }
