@@ -19,6 +19,11 @@ public class Player : MonoBehaviour {
     public int score; // players score
     public Text scoreText; // players score as presented on screen
 
+    public int getScore()
+    {
+        return score;
+    }
+
     void Start() {
         rb = GetComponent<Rigidbody2D>(); // linking player Rigidbody to rb
         SetRandomColor(); // call SetRandomColor()
