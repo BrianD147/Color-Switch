@@ -7,8 +7,10 @@ public class Spawner : MonoBehaviour {
     bool objectSpawned = true; // Used to allow or stop objects from being spawned
     int spawnCount; // Used to determine what should be spawned
     float spawnPoint; // The position objects should be spawned from
+    int spawnType; // Used to spawn different types of obstacles
 
-    public Transform circle; // Default circle transform
+    public Transform smallCircle; // Default small circle transform
+    public Transform smallSquare; // Default small square transform
     public Transform colorChanger; // Transform of the color changer gameobject
     public Transform scorePickup; // Transform of the score pickup gameobject
 	
@@ -39,7 +41,15 @@ public class Spawner : MonoBehaviour {
 
         if (spawnCount % 2 == 0) // If spawnCount is even
         {
-            Instantiate(circle, transform.position, transform.rotation); // Spawn a circle
+            spawnType = Random.Range(1, 3); // Generate a random float between 1 and 3 (parsed down into an int so will only produce 1 or 2)
+            if (spawnType == 1)
+            {
+                Instantiate(smallCircle, transform.position, transform.rotation); // Spawn a small circle
+            } else if (spawnType == 2)
+            {
+                Instantiate(smallSquare, transform.position, transform.rotation); // Spawn a small square
+            }
+            
             Instantiate(scorePickup, transform.position, transform.rotation); // Spawn a scorePickup
         }
         else // If spawnCount is odd

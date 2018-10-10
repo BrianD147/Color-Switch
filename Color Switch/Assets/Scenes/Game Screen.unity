@@ -426,7 +426,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2053656014}
-  circle: {fileID: 4793227836389778, guid: 596c7579c53b4e54c9575fe183678534, type: 2}
+  smallCircle: {fileID: 4793227836389778, guid: 596c7579c53b4e54c9575fe183678534,
+    type: 2}
+  smallSquare: {fileID: 4585017659010556, guid: f4752ecfeb27eaf41b2f5b9df317163d,
+    type: 2}
   colorChanger: {fileID: 4323122436176160, guid: a4a2217bcd4c27c4c9dde421ff71901d,
     type: 2}
   scorePickup: {fileID: 4066938994099582, guid: 9ae19a6398fbfd048aa49553181830d4,
