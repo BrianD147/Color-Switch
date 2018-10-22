@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour {
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public Rigidbody2D player;
 
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -24,6 +25,7 @@ public class PauseMenu : MonoBehaviour {
 
     public void Resume()
     {
+        player.velocity = Vector2.up * 0;
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;

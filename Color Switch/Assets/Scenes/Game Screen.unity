@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 415840874}
   - component: {fileID: 415840878}
   - component: {fileID: 415840879}
+  - component: {fileID: 415840880}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -252,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 295453825}
+  player: {fileID: 1419501992}
 --- !u!225 &415840879
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -263,6 +265,17 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &415840880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 415840873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df765926e103e9842b18f7e971beaa1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &483747486
 Prefab:
   m_ObjectHideFlags: 0
@@ -668,9 +681,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.20784314}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 0.42745098}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.19607843}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0.5882353}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -819,7 +832,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f16d4c657ca5366458570f1367603831, type: 3}
+    m_Font: {fileID: 12800000, guid: a995bc317ef81bc428468b4089197300, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
@@ -892,7 +905,7 @@ GameObject:
   - component: {fileID: 1099045591}
   - component: {fileID: 1099045590}
   m_Layer: 5
-  m_Name: Pause Button
+  m_Name: Resume Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -936,9 +949,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.20784314}
-    m_PressedColor: {r: 0, g: 0, b: 0, a: 0.42745098}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0.19607843}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0.39215687}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0.5882353}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1192,6 +1205,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1371640921}
+--- !u!50 &1419501992 stripped
+Rigidbody2D:
+  m_PrefabParentObject: {fileID: 50343175163551166, guid: a2604bba864807749881885e9ab4bb0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1737243908}
 --- !u!1 &1626322587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,8 +1555,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: 0, y: -20}
+  m_AnchoredPosition: {x: 0, y: -7.5}
+  m_SizeDelta: {x: 0, y: -15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2003718650
 MonoBehaviour:
@@ -1560,7 +1578,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f16d4c657ca5366458570f1367603831, type: 3}
+    m_Font: {fileID: 12800000, guid: a995bc317ef81bc428468b4089197300, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0

@@ -104,7 +104,7 @@ public class Player : MonoBehaviour {
 
         if (col.tag != currentColor) // If the collision is with the wrong color
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Load the same scene from the beginning (temporary)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the game over screen
         }
     }
 }
