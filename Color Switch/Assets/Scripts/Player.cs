@@ -18,15 +18,17 @@ public class Player : MonoBehaviour {
 
     public int score; // players score
     public Text scoreText; // players score as presented on screen
+    public Text highScoreText; // players highScore as presented on screen
 
-    public int getScore()
+    public int GetScore()
     {
-        return score;
+        return score; // used to access the score value
     }
 
     void Start() {
         rb = GetComponent<Rigidbody2D>(); // linking player Rigidbody to rb
         SetRandomColor(); // call SetRandomColor()
+        highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString(); // get the players highscore
     }
 
    void SetRandomColor() // used to set the currentColor to either Cyan, Yellow, Magenta or Pink
@@ -99,6 +101,14 @@ public class Player : MonoBehaviour {
             score++; // Add 1 to score
             scoreText.text = score.ToString(); // Set the scoreText to scores new value
             Destroy(col.gameObject); // Destroy the score gameobject
+
+            if (score > PlayerPrefs.GetInt("HighScore", 0))
+            {
+                PlayerPrefs.SetInt("HighScore", score);
+                highScoreText.text = score.ToString();
+            }
+
+
             return; // Exit the function
         }
 

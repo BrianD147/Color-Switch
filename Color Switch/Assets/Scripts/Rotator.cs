@@ -12,10 +12,9 @@ public class Rotator : MonoBehaviour {
 
     private void Start()
     {
-        playerScore = GameObject.Find("Player").GetComponent<Player>().getScore();
-        SpawnSpeed();
-        Direction();
-        Debug.Log(speed);
+        playerScore = GameObject.Find("Player").GetComponent<Player>().GetScore(); // Find the player GameObject and call getScore() to assign the playerScore value
+        SpawnSpeed(); // call SpawnSpeed
+        Direction(); // call Direction
     }
 
     void Update () {
@@ -24,17 +23,17 @@ public class Rotator : MonoBehaviour {
 
     void SpawnSpeed()
     {
-        lowerSpeed = 50 + (playerScore * 2);
-        upperSpeed = 100 + (playerScore * 2);
-        speed = Random.Range(lowerSpeed, upperSpeed);
+        lowerSpeed = 50 + (playerScore * 2); // set lowerSpeed floor in relation to the players score
+        upperSpeed = 100 + (playerScore * 2); // set upperSpeed ceiling in relation to the players score
+        speed = Random.Range(lowerSpeed, upperSpeed); // set the speed to a random number between the two ranges
     }
 
     void Direction()
     {
-        direction = Random.Range(1,3);
+        direction = Random.Range(1,3); // set direction to either 1 or 2
         if (direction == 2)
         {
-            speed *= -1;
+            speed *= -1; // if the number is 2, change the rotation direction
         }
     }
 }
