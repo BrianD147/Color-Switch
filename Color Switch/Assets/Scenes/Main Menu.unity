@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 737392175}
   - component: {fileID: 737392174}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Color Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 1382913475}
   - component: {fileID: 1382913474}
   - component: {fileID: 1382913473}
+  - component: {fileID: 1382913477}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -593,6 +594,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1382913477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1382913472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 650cfa30d83d5e64893886621a63b472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonText: {fileID: 1846997240}
 --- !u!1 &1846997238
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +894,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2128270841}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1382913477}
+        m_MethodName: MusicToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2128270841
