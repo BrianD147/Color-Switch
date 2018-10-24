@@ -27,4 +27,9 @@ public class MusicOption : MonoBehaviour {
             MusicIsPlaying = true;
         }
     }
+
+    public void ResetHighscore()
+    {
+        PlayerPrefs.DeleteKey("HighScore");
+    }
 }

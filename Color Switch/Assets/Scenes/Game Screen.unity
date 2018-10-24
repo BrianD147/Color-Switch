@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScoreText: {fileID: 1899783791}
+  scoreText: {fileID: 1186285253}
 --- !u!1001 &483747486
 Prefab:
   m_ObjectHideFlags: 0
