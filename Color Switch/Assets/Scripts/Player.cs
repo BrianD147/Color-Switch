@@ -29,6 +29,7 @@ public class Player : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>(); // linking player Rigidbody to rb
         SetRandomColor(); // call SetRandomColor()
         highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString(); // get the players highscore
+        PlayerPrefs.SetInt("Score", 0);
     }
 
    void SetRandomColor() // used to set the currentColor to either Cyan, Yellow, Magenta or Pink
@@ -99,6 +100,7 @@ public class Player : MonoBehaviour {
         if (col.tag == "Score") // If collision is with the score tag
         {
             score++; // Add 1 to score
+            PlayerPrefs.SetInt("Score", score); // Set players score using PlayerPrefs
             scoreText.text = score.ToString(); // Set the scoreText to scores new value
             Destroy(col.gameObject); // Destroy the score gameobject
 

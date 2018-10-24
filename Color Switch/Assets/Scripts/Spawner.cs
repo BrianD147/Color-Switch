@@ -57,13 +57,13 @@ public class Spawner : MonoBehaviour {
                 if (spawnOffSet == 1)
                 {
                     spawnOffSetPoint = transform.position;
-                    spawnOffSetPoint.x -= 1.8f;
+                    spawnOffSetPoint.x -= 2;
                     Instantiate(smallLines, spawnOffSetPoint, transform.rotation); // Spawn a small lines to the left
                 }
                 else
                 {
                     spawnOffSetPoint = transform.position;
-                    spawnOffSetPoint.x += 1.8f;
+                    spawnOffSetPoint.x += 2;
                     Instantiate(smallLines, spawnOffSetPoint, transform.rotation); // Spawn a small lines to the right
                 }
             }

@@ -23,8 +23,8 @@ public class Rotator : MonoBehaviour {
 
     void SpawnSpeed()
     {
-        lowerSpeed = 50 + (playerScore * 2); // set lowerSpeed floor in relation to the players score
-        upperSpeed = 100 + (playerScore * 2); // set upperSpeed ceiling in relation to the players score
+        lowerSpeed = 30 + (playerScore * 2); // set lowerSpeed floor in relation to the players score
+        upperSpeed = 80 + (playerScore * 2); // set upperSpeed ceiling in relation to the players score
         speed = Random.Range(lowerSpeed, upperSpeed); // set the speed to a random number between the two ranges
     }
 

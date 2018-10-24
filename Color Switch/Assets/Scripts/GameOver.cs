@@ -8,11 +8,15 @@ public class GameOver : MonoBehaviour {
 
     int highScore; // highScore value
     public Text highScoreText; // On screen text of highScore
+    int score; // highScore value
+    public Text scoreText; // On screen text of highScore
 
     private void Start()
     {
         highScore = PlayerPrefs.GetInt("HighScore"); // get the players highScore value
         highScoreText.text = highScore.ToString(); // set on screen highScore to the highScore value
+        score = PlayerPrefs.GetInt("Score");
+        scoreText.text = score.ToString();
     }
 
     public void NavToMenu()
