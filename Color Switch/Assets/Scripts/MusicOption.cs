@@ -12,9 +12,7 @@ public class MusicOption : MonoBehaviour {
     public GameObject smallCircle1;
     public GameObject smallCircle2;
 
-    //ublic AudioSource Music;
-
-    public Text buttonText;
+    //public AudioSource Music;
 
     public void MusicToggle()
     {
@@ -22,13 +20,11 @@ public class MusicOption : MonoBehaviour {
         {
             //Music.Pause();
             AudioListener.pause = true;
-            buttonText.text = "Music OFF";
             MusicIsPlaying = false;
         } else
         {
             //Music.Play();
             AudioListener.pause = false;
-            buttonText.text = "Music ON";
             MusicIsPlaying = true;
         }
     }
