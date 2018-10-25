@@ -30,6 +30,7 @@ public class Player : MonoBehaviour {
         SetRandomColor(); // call SetRandomColor()
         highScoreText.text = PlayerPrefs.GetInt("HighScore", 0).ToString(); // get the players highscore
         PlayerPrefs.SetInt("Score", 0);
+        score = 0;
         scoreText.text = score.ToString(); // Set the scoreText to scores new value
     }
 
