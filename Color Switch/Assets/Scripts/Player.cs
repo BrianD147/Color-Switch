@@ -118,6 +118,8 @@ public class Player : MonoBehaviour {
 
         if (col.tag != currentColor) // If the collision is with the wrong color
         {
+            // Add Death Animation
+            //rb.gameObject.SetActive(false);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the game over screen
         }
     }
