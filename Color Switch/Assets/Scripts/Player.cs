@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -19,6 +20,8 @@ public class Player : MonoBehaviour {
     public int score; // players score
     public Text scoreText; // players score as presented on screen
     public Text highScoreText; // players highScore as presented on screen
+
+    public GameObject playerExplosion;
 
     public int GetScore()
     {
@@ -118,9 +121,16 @@ public class Player : MonoBehaviour {
 
         if (col.tag != currentColor) // If the collision is with the wrong color
         {
-            // Add Death Animation
-            //rb.gameObject.SetActive(false);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the game over screen
+            StartCoroutine(DeathAnimation());
         }
+    }
+
+    IEnumerator DeathAnimation()
+    {
+        rb.GetComponent<SpriteRenderer>().enabled = false;
+        playerExplosion.transform.position = rb.position;
+        playerExplosion.SetActive(true);
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the game over screen
     }
 }
