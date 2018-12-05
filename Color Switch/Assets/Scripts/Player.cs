@@ -23,6 +23,8 @@ public class Player : MonoBehaviour {
 
     public GameObject playerExplosion;
 
+    public GameObject TapToJumpUI;
+
     public int GetScore()
     {
         return score; // used to access the score value
@@ -65,6 +67,7 @@ public class Player : MonoBehaviour {
     void Update () {
         if (Input.touchCount > 0)
         {
+            TapToJumpUI.SetActive(false);
             rb.bodyType = RigidbodyType2D.Dynamic; // Set rigidbody to dynamic
             Touch touch = Input.GetTouch(0); // Get
             if (touch.phase.Equals(TouchPhase.Began)) // When the current touch began
